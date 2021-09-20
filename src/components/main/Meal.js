@@ -1,8 +1,10 @@
 import Card from "../UI/Card";
 import style from "./Meal.module.css";
 const Meal = (props) => {
+  const mealKey = props.id;
+
   const deleteHandler = (event) => {
-    alert("delete me");
+    props.deleteMeal(mealKey);
   };
 
   return (

@@ -18,6 +18,10 @@ function App() {
     setMeals((prev) => [...prev, meal]);
   };
 
+  const removeMeal = (id) => {
+    setMeals((prev) => prev.filter((e) => e.id !== id));
+  };
+
   //get size for Add Meal UI
   let mealListEmpty = true;
   if (meals.length > 0) {
@@ -32,7 +36,7 @@ function App() {
         }`}
       >
         <AddMeal displayModal={displayModal} size={mealListEmpty}></AddMeal>
-        <Meals list={meals}></Meals>
+        <Meals list={meals} deleteMeal={removeMeal}></Meals>
       </div>
       <ModalWrapper
         isModalDisplay={isModalDisplay}
