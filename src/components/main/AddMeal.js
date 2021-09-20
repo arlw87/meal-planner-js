@@ -1,7 +1,15 @@
 import styles from "./AddMeal.module.css";
 
-const AddMeal = () => {
-  return <button className={styles.button}>+</button>;
+const AddMeal = (props) => {
+  const addHandler = (event) => {
+    props.addMealHandler();
+  };
+
+  return (
+    <button onClick={addHandler} className={styles.button}>
+      +
+    </button>
+  );
 };
 
 export default AddMeal;

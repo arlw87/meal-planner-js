@@ -1,0 +1,24 @@
+.wrapper {
+  background-color: #e4e4e4;
+  max-width: 700px;
+  width: 50%;
+  height: 50%;
+  border-radius: 1vw;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: relative;
+  display: flex;
+  /* flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+
+.closeButton {
+  position: absolute;
+  right: 1%;
+  top: 2%;
+  border: none;
+  background-color: rgb(235, 88, 88);
+  border-radius: 1vw;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
