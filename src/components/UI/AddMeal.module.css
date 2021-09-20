@@ -1,4 +1,11 @@
-h1 {
+.title {
   font-family: "Dancing Script", cursive;
+}
+
+.large {
+  font-size: 6rem;
+}
+
+.small {
   font-size: 4rem;
 }
