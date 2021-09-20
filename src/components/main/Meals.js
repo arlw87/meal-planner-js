@@ -9,8 +9,7 @@ const Meals = (props) => {
       {props.list.map((e) => (
         <Meal
           name={e.name}
-          type={"food"}
-          price={"£2.30"}
+          type={e.type}
           key={e.id}
           id={e.id}
           deleteMeal={props.deleteMeal}

@@ -13,8 +13,7 @@ const Meal = (props) => {
         <h3 className={style.mealTitle}>{props.name}</h3>
         <hr style={{ width: "80%", borderBottom: "1px,solid,black" }} />
         <div className={style.mealInfoContainer}>
-          <h3>{props.type}</h3>
-          <h3>{props.price}</h3>
+          <h3>Type: {props.type}</h3>
         </div>
         <button onClick={deleteHandler}>Delete</button>
       </Card>

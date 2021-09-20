@@ -5,8 +5,10 @@ const TextInput = (props) => {
     props.onChange(event.target.value);
   };
 
+  console.log(props);
+
   return (
-    <div className={style.TextInput}>
+    <div className={`${style.TextInput} ${props.className}`}>
       <label>{props.labelName}</label>
       <input type="text" value={props.value} onChange={updateValue}></input>
     </div>
