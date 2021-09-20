@@ -5,3 +5,7 @@
   margin: 10px auto;
   justify-content: center;
 }
+
+.error {
+  border: red 2px solid;
+}

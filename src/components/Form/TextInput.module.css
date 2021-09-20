@@ -3,3 +3,7 @@
   text-align: center;
   margin: 10px auto;
 }
+
+.error {
+  border: red 2px solid;
+}

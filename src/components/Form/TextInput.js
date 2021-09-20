@@ -5,12 +5,17 @@ const TextInput = (props) => {
     props.onChange(event.target.value);
   };
 
-  console.log(props);
+  console.log("isMealNameError:  ", props.error);
 
   return (
     <div className={`${style.TextInput} ${props.className}`}>
-      <label>{props.labelName}</label>
-      <input type="text" value={props.value} onChange={updateValue}></input>
+      <label className={props.error && style.error}>{props.labelName}</label>
+      <input
+        type="text"
+        value={props.value}
+        onChange={updateValue}
+        className={props.error && style.error}
+      ></input>
     </div>
   );
 };

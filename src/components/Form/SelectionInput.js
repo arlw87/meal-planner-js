@@ -13,6 +13,7 @@ const SelectionInput = (props) => {
         id="foodType"
         onChange={updateSelection}
         defaultValue={props.value}
+        className={props.error && styles.error}
       >
         <option value=""></option>
         <option value="Meat">Meat</option>

@@ -7,20 +7,41 @@ const AddMealForm = (props) => {
   //state for inputs
   const [mealName, setMealName] = useState("");
   const [mealType, setMealType] = useState("");
+  const [isMealNameError, setMealNameError] = useState(false);
+  const [isMealTypeError, setMealTypeError] = useState(false);
 
   const mealUpdate = (mealName) => {
     //create a meal Object
     setMealName(mealName);
+    if (mealName.trim().length > 0) {
+      setMealNameError(false);
+    }
   };
 
   const mealTypeUpdate = (mealType) => {
     setMealType(mealType);
-    console.log(mealType);
+    if (mealType.trim().length > 0) {
+      setMealTypeError(false);
+    }
   };
 
   //props.addMeal(meal);
   const onSubmitHandler = (event) => {
     event.preventDefault();
+
+    if (mealName.trim().length === 0) {
+      setMealNameError(true);
+      if (mealType === "") {
+        setMealTypeError(true);
+        return;
+      }
+      return;
+    }
+
+    if (mealType === "") {
+      setMealTypeError(true);
+      return;
+    }
 
     //create meal Object
     const mealObject = {
@@ -40,12 +61,14 @@ const AddMealForm = (props) => {
         value={mealName}
         onChange={mealUpdate}
         className={style.formControl}
+        error={isMealNameError}
       />
       <SelectionInput
         className={style.formControl}
         label="Category"
         value={mealType}
         onChange={mealTypeUpdate}
+        error={isMealTypeError}
       ></SelectionInput>
       <button className={style.formControl} type="submit">
         Add Meal
